@@ -50,7 +50,11 @@ const TaskCard = ({ task }) => {
         <div className="flex gap-4">
           <h2 className="font-semibold text-lg pl-2">Priority:</h2>
           <div>
-            <Chip variant="flat" endContent={<FlagIcon />}>
+            <Chip
+              classNames={{ content: "font-bold" }}
+              variant="flat"
+              endContent={<FlagIcon />}
+            >
               {task.priority}
             </Chip>
           </div>

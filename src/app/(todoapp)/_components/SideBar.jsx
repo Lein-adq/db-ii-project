@@ -1,7 +1,13 @@
+"use client";
+
 import { Button } from "@nextui-org/button";
 import TaskListIcon from "./_icons/Task-List-Icon";
+import { useDisclosure } from "@nextui-org/react";
+import TaskModal from "./TaskModal";
 
 const SideBar = () => {
+  const { isOpen, onOpen, onOpenChange } = useDisclosure();
+
   return (
     <nav
       id="sidebar"
@@ -17,9 +23,13 @@ const SideBar = () => {
           variant="light"
           color="default"
           className="font-medium text-base text-slate-200"
+          onPress={onOpen}
         >
           Create a new Task
         </Button>
+
+        <TaskModal isOpen={isOpen} onOpenChange={onOpenChange} />
+
         <Button
           variant="light"
           color="default"
