@@ -1,23 +1,47 @@
+"use client";
+
+import "react-datepicker/dist/react-datepicker.css";
+import React, { useState } from "react";
+import DatePicker from "react-datepicker";
 import { Card, CardBody, CardFooter, CardHeader } from "@nextui-org/card";
 import { Divider } from "@nextui-org/divider";
 import { Chip } from "@nextui-org/chip";
-import FlagIcon from "./_icons/Flag-Icon";
-import TrashIcon from "./_icons/Trash-Icon";
-import EditIcon from "./_icons/Edit-Icon";
-import { Button } from "@nextui-org/react";
+import FlagIcon from "../_icons/Flag-Icon";
+import TrashIcon from "../_icons/Trash-Icon";
+import EditIcon from "../_icons/Edit-Icon";
+import { Button } from "@nextui-org/button";
+import CalendarIcon from "../_icons/Calendar-Icon";
 
 const TaskCard = ({ task }) => {
+  const [startDate, setStartDate] = useState(new Date());
+
   return (
     <Card className="w-[350px]">
       <CardHeader className="flex justify-between">
         <h1 className="text-xl font-bold px-2">{task.name}</h1>
-        <div className="flex gap-4">
-          <Button isIconOnly variant="flat" color="primary">
-            <EditIcon />
-          </Button>
-          <Button isIconOnly variant="flat" color="danger">
-            <TrashIcon />
-          </Button>
+        <div className="flex gap-2">
+          <div className="opacity-0 hover:opacity-100 transform transition-opacity ease-in-out duration-300">
+            <DatePicker
+              selected={startDate}
+              onChange={(date) => setStartDate(date)}
+              dateFormat="MM/dd/yyyy"
+              customInput={
+                <Button isIconOnly variant="flat">
+                  <CalendarIcon />
+                </Button>
+              }
+            />
+          </div>
+          <div className="opacity-0 hover:opacity-100 transform transition-opacity ease-in-out duration-300">
+            <Button isIconOnly variant="flat" color="primary">
+              <EditIcon />
+            </Button>
+          </div>
+          <div className="opacity-0 hover:opacity-100 transform transition-opacity ease-in-out duration-300">
+            <Button isIconOnly variant="flat" color="danger">
+              <TrashIcon />
+            </Button>
+          </div>
         </div>
       </CardHeader>
 

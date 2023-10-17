@@ -3,7 +3,7 @@
 import { Button } from "@nextui-org/button";
 import TaskListIcon from "./_icons/Task-List-Icon";
 import { useDisclosure } from "@nextui-org/react";
-import TaskModal from "./TaskModal";
+import TaskModal from "./_tasks/TaskModal";
 
 const SideBar = () => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
