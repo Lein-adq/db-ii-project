@@ -1,3 +1,4 @@
+"use client";
 import React, { forwardRef, useState } from "react";
 import DatePicker, { CalendarContainer } from "react-datepicker";
 import { Card, CardBody } from "@nextui-org/card";

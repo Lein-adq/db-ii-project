@@ -7,6 +7,7 @@ import {
 } from "@nextui-org/modal";
 import { Button } from "@nextui-org/button";
 import CreateTaskForm from "./CreateTaskForm";
+import "react-datepicker/dist/react-datepicker.css";
 
 const TaskModal = ({ isOpen, onOpenChange }) => {
   return (
